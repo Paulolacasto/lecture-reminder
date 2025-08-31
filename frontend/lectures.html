@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Manage Lectures</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 text-gray-800">
+  <div class="max-w-5xl mx-auto p-6">
+    <h1 class="text-2xl font-bold mb-4">📖 Manage Lectures</h1>
+
+    <!-- Back button -->
+    <a href="index.html" class="inline-block mb-4 text-blue-600 hover:underline">← Back to Dashboard</a>
+
+    <!-- Add Lecture Form -->
+    <form id="lectureForm" class="bg-white shadow rounded-lg p-6 mb-6">
+      <h2 class="text-xl font-semibold mb-4">➕ Add New Lecture</h2>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <input type="text" id="title" name="title" placeholder="Lecture Title" required class="p-2 border rounded w-full">
+        <input type="text" id="lecturer" name="lecturer" placeholder="Lecturer" required class="p-2 border rounded w-full">
+        <input type="date" id="date" name="date" required class="p-2 border rounded w-full">
+        <input type="time" id="time" name="time" required class="p-2 border rounded w-full">
+        <input type="text" id="venue" name="venue" placeholder="Venue" required class="p-2 border rounded w-full">
+        <input type="number" id="reminderTime" name="reminderTime" placeholder="Reminder (mins before)" value="30" min="1" class="p-2 border rounded w-full">
+      </div>
+
+      <button type="submit" class="mt-4 px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700">
+        Add Lecture
+      </button>
+    </form>
+
+    <!-- Lecture List -->
+    <div class="bg-white shadow rounded-lg p-6 overflow-x-auto">
+      <h2 class="text-xl font-semibold mb-4">📋 Lecture List</h2>
+      <table class="w-full border-collapse border border-gray-300 text-sm md:text-base">
+        <thead>
+          <tr class="bg-gray-200 text-left">
+            <th class="border p-2">Title</th>
+            <th class="border p-2">Lecturer</th>
+            <th class="border p-2">Date</th>
+            <th class="border p-2">Time</th>
+            <th class="border p-2">Venue</th>
+            <th class="border p-2">Reminder</th>
+            <th class="border p-2 text-center">Action</th>
+          </tr>
+        </thead>
+        <tbody id="lectureTableBody"></tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- ✅ Load JS at the end so DOM is ready -->
+  <script src="js/lectures.js"></script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Manage Students</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 text-gray-800">
+  <div class="max-w-5xl mx-auto p-6">
+    <h1 class="text-2xl font-bold mb-4">🎓 Manage Students</h1>
+
+    <!-- Back button -->
+    <a href="index.html" class="inline-block mb-4 text-blue-600 hover:underline">← Back to Dashboard</a>
+
+    <!-- Add Student Form -->
+    <form id="studentForm" class="bg-white shadow rounded-lg p-6 mb-6">
+      <h2 class="text-xl font-semibold mb-4">➕ Register New Student</h2>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <input type="text" id="name" placeholder="Full Name" required class="p-2 border rounded w-full">
+        <input type="email" id="email" placeholder="Email" required class="p-2 border rounded w-full">
+        <input type="text" id="phone" placeholder="Phone Number" required class="p-2 border rounded w-full">
+        <input type="text" id="department" placeholder="Department" required class="p-2 border rounded w-full">
+      </div>
+
+      <button type="submit" class="mt-4 px-4 py-2 bg-green-600 text-white rounded hover:bg-green-700">Add Student</button>
+    </form>
+
+    <!-- Student List -->
+    <div class="bg-white shadow rounded-lg p-6">
+      <h2 class="text-xl font-semibold mb-4">📋 Student List</h2>
+      <table class="w-full border-collapse border border-gray-300">
+        <thead>
+          <tr class="bg-gray-200">
+            <th class="border p-2">Name</th>
+            <th class="border p-2">Email</th>
+            <th class="border p-2">Phone</th>
+            <th class="border p-2">Department</th>
+            <th class="border p-2">Action</th>
+          </tr>
+        </thead>
+        <tbody id="studentTableBody"></tbody>
+      </table>
+    </div>
+  </div>
+
+  <script src="js/students.js"></script>
+</body>
+</html>

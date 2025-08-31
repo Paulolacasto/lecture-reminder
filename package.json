@@ -1,0 +1,35 @@
+{
+  "$schema": "https://json.schemastore.org/package.json",
+  "private": true,
+  "scripts": {
+    "build": "vite build",
+    "dev": "vite",
+    "start": "node server.js"
+  },
+  "devDependencies": {
+    "@tailwindcss/vite": "^4.0.0",
+    "axios": "^1.11.0",
+    "concurrently": "^9.0.1",
+    "laravel-vite-plugin": "^2.0.0",
+    "tailwindcss": "^4.0.0",
+    "vite": "^7.0.4"
+  },
+  "name": "lecture-reminder",
+  "version": "1.0.0",
+  "description": "Lecture Reminder System",
+  "main": "server.js",
+  "directories": {
+    "test": "tests"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.1",
+    "express": "^4.19.0",
+    "mongoose": "^8.18.0",
+    "node-cron": "^4.2.1",
+    "nodemailer": "^7.0.5"
+  }
+}

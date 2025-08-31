@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lecture Reminders</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 text-gray-800">
+  <div class="max-w-5xl mx-auto p-6">
+    <h1 class="text-2xl font-bold mb-4">⏰ Lecture Reminders</h1>
+
+    <!-- Back button -->
+    <a href="index.html" class="inline-block mb-4 text-blue-600 hover:underline">← Back to Dashboard</a>
+
+    <!-- Reminder Form -->
+    <form id="reminderForm" class="bg-white shadow rounded-lg p-6 mb-6">
+      <h2 class="text-xl font-semibold mb-4">➕ Create Reminder</h2>
+
+      <!-- Lecture Selection -->
+      <label class="block mb-2 font-medium">Select Lecture</label>
+      <select id="lecture" required class="p-2 border rounded w-full mb-4"></select>
+
+      <!-- Students Selection -->
+      <label class="block mb-2 font-medium">Select Students</label>
+      <div id="studentList" class="border rounded p-2 h-40 overflow-y-auto mb-4 bg-gray-50">
+        <!-- students checkboxes will load here -->
+      </div>
+
+      <!-- Reminder Message -->
+      <textarea id="message" placeholder="Reminder message" required class="p-2 border rounded w-full mb-4"></textarea>
+
+      <!-- Reminder Time -->
+      <input type="datetime-local" id="reminderTime" required class="p-2 border rounded w-full mb-4">
+
+      <button type="submit" class="px-4 py-2 bg-green-600 text-white rounded hover:bg-green-700">Save Reminder</button>
+    </form>
+
+    <!-- Reminders List -->
+    <div class="bg-white shadow rounded-lg p-6">
+      <h2 class="text-xl font-semibold mb-4">📋 Scheduled Reminders</h2>
+      <table class="w-full border-collapse border border-gray-300">
+        <thead>
+          <tr class="bg-gray-200">
+            <th class="border p-2">Lecture</th>
+            <th class="border p-2">Message</th>
+            <th class="border p-2">Reminder Time</th>
+            <th class="border p-2">Students</th>
+          </tr>
+        </thead>
+        <tbody id="reminderTableBody"></tbody>
+      </table>
+    </div>
+  </div>
+
+  <script src="js/reminders.js"></script>
+</body>
+</html>
