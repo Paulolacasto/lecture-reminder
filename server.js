@@ -23,11 +23,12 @@ console.log("📡 Starting server...");
 // =========================
 // MongoDB Connection
 // =========================
+// Use MONGO_URI from .env (Render/Atlas), otherwise fallback to local MongoDB
+const MONGO_URI =
+  process.env.MONGO_URI || "mongodb://127.0.0.1:27017/lecture_reminder";
+
 mongoose
-  .connect("mongodb://127.0.0.1:27017/lecture_reminder", {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-  })
+  .connect(MONGO_URI)
   .then(() => {
     console.log("✅ MongoDB connected");
 
